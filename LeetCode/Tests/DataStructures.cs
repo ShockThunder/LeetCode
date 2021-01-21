@@ -1,6 +1,6 @@
 namespace Tests.DataStructures
 {
-    using LeetCode.DataStructures;
+    using LeetCode.Arrays_101;
 
     using NUnit.Framework;
 

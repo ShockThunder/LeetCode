@@ -1,4 +1,4 @@
-namespace LeetCode.DataStructures
+namespace LeetCode.Arrays_101
 {
     using System;
 
