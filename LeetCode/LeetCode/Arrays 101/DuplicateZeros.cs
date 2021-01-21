@@ -2,7 +2,7 @@ namespace LeetCode.Arrays_101
 {
     public class DuplicateZeros
     {
-        public int[] Solution(int[] arr)
+        public int[] Solution1(int[] arr)
         {
             var resultPointer = 0;
             var result = new int[arr.Length];
@@ -28,6 +28,28 @@ namespace LeetCode.Arrays_101
                 resultPointer++;
             }
             return result;
+        }
+
+        public int[] Solution2(int[] arr)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] == 0)
+                {
+                    if (i + 1 < arr.Length)
+                    {
+                        for (int j = arr.Length - 1; j > i; j--)
+                        {
+                            arr[j] = arr[j - 1];
+                        }
+
+                        arr[i + 1] = 0;
+                        i++;
+                    }
+                }
+            }
+
+            return arr;
         }
     }
 }

@@ -26,11 +26,19 @@ namespace Tests.DataStructures
 
         [TestCase(new int[]{1,0,2,3,0,4,5,0}, ExpectedResult = new int[]{1,0,0,2,3,0,0,4})]
         [TestCase(new int[]{1,0,2,0,0,4,5,0}, ExpectedResult = new int[]{1,0,0,2,0,0,0,0})]
-
-        public int[] DuplicateZerosTest(int[] data)
+        public int[] DuplicateZerosTestSolution1(int[] data)
         {
             var testClass = new DuplicateZeros();
-            var res = testClass.Solution(data);
+            var res = testClass.Solution1(data);
+            return res;
+        }
+        
+        [TestCase(new int[]{1,0,2,3,0,4,5,0}, ExpectedResult = new int[]{1,0,0,2,3,0,0,4})]
+        [TestCase(new int[]{1,0,2,0,0,4,5,0}, ExpectedResult = new int[]{1,0,0,2,0,0,0,0})]
+        public int[] DuplicateZerosTestSolution2(int[] data)
+        {
+            var testClass = new DuplicateZeros();
+            var res = testClass.Solution2(data);
             return res;
         }
     }
