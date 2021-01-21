@@ -13,10 +13,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="DataStructures" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\LeetCode\LeetCode.csproj" />
     </ItemGroup>
 
