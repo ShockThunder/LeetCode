@@ -4,6 +4,7 @@ namespace Tests.DataStructures
 
     using NUnit.Framework;
 
+    [TestFixture]
     public class Tests
     {
 
@@ -41,5 +42,32 @@ namespace Tests.DataStructures
             var res = testClass.Solution2(data);
             return res;
         }
+
+        [Test]
+        public void MergeSortedArraySolution1()
+        {
+            var nums1 = new int[] { 1, 2, 3, 0, 0, 0 };
+            var m = 3;
+            var nums2 = new int[] { 2, 5, 6 };
+            var n = 3;
+            var expectedResult = new int[] { 1, 2, 2, 3, 5, 6 };
+            var testClass = new MergeSortedArray();
+            var res = testClass.Solution1(nums1, m, nums2, n);
+            Assert.AreEqual(expectedResult, res);
+        }
+        
+        [Test]
+        public void MergeSortedArraySolution2()
+        {
+            var nums1 = new int[] { 1, 2, 3, 0, 0, 0 };
+            var m = 3;
+            var nums2 = new int[] { 2, 5, 6 };
+            var n = 3;
+            var expectedResult = new int[] { 1, 2, 2, 3, 5, 6 };
+            var testClass = new MergeSortedArray();
+            var res = testClass.Solution2(nums1, m, nums2, n);
+            Assert.AreEqual(expectedResult, res);
+        }
+        
     }
 }
