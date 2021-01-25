@@ -6,28 +6,27 @@ namespace LeetCode.Arrays_101
     {
         public int[] Solution1(int[] nums1, int m, int[] nums2, int n)
         {
-            var nums2Pointer = 0;
-            for (int i = 0; i < nums1.Length; i++)
-            {
-                if (m + n == 1)
-                    break;
-                
-                if (nums1[i] > nums2[nums2Pointer])
-                {
-                    for (var j = nums1.Length - 1; j > i; j--)
-                    {
-                        nums1[j] = nums1[j - 1];
-                    }
-
-                    nums1[i] = nums2[nums2Pointer];
-                    nums2Pointer++;
+            var i = m - 1;
+            var j = n - 1;
+            var k = m + n - 1;
+            
+            while(i >= 0 && j >= 0){
+                if(nums1[i] >= nums2[j]){
+                    nums1[k] = nums1[i];
+                    i--;
+                    k--;
                 }
-
-                if (n + m - 1 - i <= 1)
-                {
-                    nums1[i] = nums2[nums2Pointer];
-                    nums2Pointer++;
+                else{
+                    nums1[k] = nums2[j];
+                    j--;
+                    k--;
                 }
+            }
+            
+            while(j >= 0){
+                nums1[k] = nums2[j];
+                j--;
+                k--;
             }
 
             return nums1;
