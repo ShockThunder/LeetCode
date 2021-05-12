@@ -68,6 +68,16 @@ namespace Tests.DataStructures
             var res = testClass.Solution2(nums1, m, nums2, n);
             Assert.AreEqual(expectedResult, res);
         }
+
+        [Test]
+        public void RemoveElementSolution()
+        {
+            var nums = new int[] {3,2,2,3 };
+            var val = 3;
+            var testClass = new RemoveElement();
+            var res = testClass.Solution(nums, val);
+            Assert.AreEqual(2, res);
+        }
         
     }
 }
