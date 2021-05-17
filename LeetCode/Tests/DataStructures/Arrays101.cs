@@ -78,6 +78,17 @@ namespace Tests.DataStructures
             var res = testClass.Solution(nums, val);
             Assert.AreEqual(2, res);
         }
+
+
+        [Test]
+        public void RemoveDuplicatesSolution()
+        {
+            var nums = new int[] {0,0,1,1,1,2,2,3,3,4};
+
+        var testClass = new RemoveDuplicates();
+            var res = testClass.Solution(nums);
+            Assert.AreEqual(5, res);
+        }
         
     }
 }
