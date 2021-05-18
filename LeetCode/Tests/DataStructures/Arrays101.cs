@@ -42,7 +42,7 @@ namespace Tests.DataStructures
             var res = testClass.Solution2(data);
             return res;
         }
-
+        
         [Test]
         public void MergeSortedArraySolution1()
         {
@@ -90,5 +90,12 @@ namespace Tests.DataStructures
             Assert.AreEqual(5, res);
         }
         
+        [TestCase(new int[]{3,1,7,11}, ExpectedResult = false)]
+        [TestCase(new int[]{7,1,14,11}, ExpectedResult = true)]
+        public bool CheckIfExistSolution(int[] data)
+        {
+            var testClass = new CheckIfNandItsDoubleExist();
+            return testClass.Solution(data);
+        }
     }
 }
