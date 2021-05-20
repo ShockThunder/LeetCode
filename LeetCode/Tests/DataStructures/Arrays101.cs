@@ -97,5 +97,14 @@ namespace Tests.DataStructures
             var testClass = new CheckIfNandItsDoubleExist();
             return testClass.Solution(data);
         }
+        
+        [TestCase(new int[]{2,1}, ExpectedResult = false)]
+        [TestCase(new int[]{3,5,5}, ExpectedResult = false)]
+        [TestCase(new int[]{0,3,2,1}, ExpectedResult = true)]
+        public bool ValidMountainArraySolution(int[] data)
+        {
+            var testClass = new ValidMountainArray();
+            return testClass.Solution(data);
+        }
     }
 }
