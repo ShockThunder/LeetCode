@@ -114,5 +114,16 @@ namespace Tests.DataStructures
             var testClass = new ReplaceElements();
             return testClass.Solution(data);
         }
+        
+        [Test]
+        public void MoveZeroesSolution()
+        {
+            var nums = new[] {0,1,0,3,12};
+            var res = new[] { 1, 3, 12, 0, 0 };
+
+            var testClass = new MoveZeroes();
+            testClass.Solution(nums);
+            Assert.AreEqual(nums, res);
+        }
     }
 }
