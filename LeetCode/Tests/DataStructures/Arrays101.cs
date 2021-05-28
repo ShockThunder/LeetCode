@@ -134,5 +134,14 @@ namespace Tests.DataStructures
             var res = testClass.Solution(nums);
             Assert.AreEqual(expected, res);
         }
+        
+        [TestCase(new[] { 1,1,4,2,1,3 }, ExpectedResult = 3)]
+        [TestCase(new[] { 5,1,2,3,4 }, ExpectedResult = 5)]
+        [TestCase(new[] { 1,2,3,4,5 }, ExpectedResult = 0)]
+        public int HeightCheckerSolution(int[] data)
+        {
+            var testClass = new HeightChecker();
+            return testClass.Solution(data);
+        }
     }
 }
