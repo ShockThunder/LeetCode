@@ -143,5 +143,14 @@ namespace Tests.DataStructures
             var testClass = new HeightChecker();
             return testClass.Solution(data);
         }
+        
+        [TestCase(new[] { 3,2,1 }, ExpectedResult = 1)]
+        [TestCase(new[] { 1,2 }, ExpectedResult = 2)]
+        [TestCase(new[] { 2,2,3,1 }, ExpectedResult = 1)]
+        public int ThirdMaxSolution(int[] data)
+        {
+            var testClass = new ThirdMax();
+            return testClass.Solution(data);
+        }
     }
 }
