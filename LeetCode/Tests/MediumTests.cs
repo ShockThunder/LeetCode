@@ -44,7 +44,9 @@ namespace Tests
             var solver = new AddTwoNumbers();
             var result = solver.Solution(l1, l2);
 
-            Assert.AreEqual(expectedRes, result);
+            Assert.AreEqual(expectedRes.val, result.val);
+            Assert.AreEqual(expectedRes.next.val, result.next.val);
+            Assert.AreEqual(expectedRes.next.next.val, result.next.next.val);
         }
     }
 }

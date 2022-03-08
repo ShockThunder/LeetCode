@@ -10,34 +10,52 @@ namespace LeetCode
     {
         public ListNode Solution(ListNode l1, ListNode l2)
         {
-            var firstNumber = string.Empty;
-            while(l1 != null)
-            {
-                firstNumber = l1.val.ToString() + firstNumber;
-                l1 = l1.next;
-            }
 
-            var secondNumber = string.Empty;
-            while (l2 != null)
+            ListNode result = null;
+            var operatingNode = new ListNode();
+            var nextRank = 0;
+            while (l1 != null || l2 != null)
             {
-                secondNumber = l2.val.ToString() + secondNumber;
-                l2 = l2.next;
-            }
+                if(result == null)
+                {
+                    result = new ListNode();
+                    operatingNode = result;
+                }
+                else
+                {
+                    operatingNode.next = new ListNode();
+                    operatingNode = operatingNode.next;
+                }
+                var num1 = 0;
+                var num2 = 0;
 
-            var resultNumber = (int.Parse(firstNumber) + int.Parse(secondNumber)).ToString().ToCharArray();
-            if(resultNumber.Length == 0)
-            {
-                return new ListNode(0);
-            }
+                if(l1 != null)
+                {
+                    num1 = l1.val;
+                    l1 = l1.next;
+                }
 
-            var result = new ListNode();
-            var nextNode = result;
-            for (int i = resultNumber.Length - 1; i >= 0; i--)
-            {
-                nextNode.val = int.Parse(resultNumber[i].ToString());
-                nextNode.next = new ListNode();
-                nextNode = nextNode.next;
+                if (l2 != null)
+                {
+                    num2 = l2.val;
+                    l2 = l2.next;
+                }
+
+                var sum = num1 + num2 + nextRank;
+                if(sum >= 10)
+                {
+                    sum = sum - 10;
+                    nextRank = 1;
+                }
+                else
+                {
+                    nextRank = 0;
+                }
+
+                operatingNode.val = sum;
             }
+            if(nextRank == 1)
+                operatingNode.next = new ListNode(1);
 
             return result;
         }
