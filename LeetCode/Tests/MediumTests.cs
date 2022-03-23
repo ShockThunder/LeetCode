@@ -48,5 +48,17 @@ namespace Tests
             Assert.AreEqual(expectedRes.next.val, result.next.val);
             Assert.AreEqual(expectedRes.next.next.val, result.next.next.val);
         }
+
+        [Test]
+        public void MedianSortedArrays()
+        {
+            var nums1 = new int[] { 1, 2 };
+            var nums2 = new int[] { 3, 4 };
+            var expectedRes = 2.5d;
+            var solver = new MedianSortedArrays();
+            var result = solver.Solution(nums1, nums2);
+
+            Assert.AreEqual(expectedRes, result);
+        }
     }
 }
