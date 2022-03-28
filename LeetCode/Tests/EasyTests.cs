@@ -1,6 +1,7 @@
 ﻿using LeetCode;
 
 using NUnit.Framework;
+using System.Collections.Generic;
 
 namespace Tests
 {
@@ -33,6 +34,19 @@ namespace Tests
         {
             var solver = new TwoSum();
             return solver.Solution(nums, target);
+        }
+
+        [Test]
+        public void BirthdayTests()
+        {
+            var s = new List<int>() { 1, 2, 1, 3, 2 };
+            var d = 3;
+            var m = 2;
+            var expectedResult = 2;
+            var solver = new Birthday();
+            var result = solver.Solution(s, d, m);
+
+            Assert.AreEqual(expectedResult, result);
         }
     }
 }
