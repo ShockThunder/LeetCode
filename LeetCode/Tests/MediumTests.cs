@@ -60,5 +60,13 @@ namespace Tests
 
             Assert.AreEqual(expectedRes, result);
         }
+
+        [Test]
+        [TestCase("baaasd", ExpectedResult = "aaa")]
+        public string FindLongestPalindrome(string s)
+        {
+            var solver = new LongestPalindromSubstring();
+            return solver.Solution(s);
+        }
     }
 }
