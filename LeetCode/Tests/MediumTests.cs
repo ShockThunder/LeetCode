@@ -68,5 +68,14 @@ namespace Tests
             var solver = new LongestPalindromSubstring();
             return solver.Solution(s);
         }
+
+        [Test]
+        [TestCase("PAYPALISHIRING", 3, ExpectedResult = "PAHNAPLSIIGYIR")]
+        [TestCase("ABCDEFG", 2, ExpectedResult = "ACEGBDF")]
+        public string ZigzagConversion(string s, int numRows)
+        {
+            var solver = new ZigzagConversion();
+            return solver.Solution(s, numRows);
+        }
     }
 }
