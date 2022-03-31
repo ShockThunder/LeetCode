@@ -77,5 +77,14 @@ namespace Tests
             var solver = new ZigzagConversion();
             return solver.Solution(s, numRows);
         }
+
+        [Test]
+        [TestCase(123, ExpectedResult = 321)]
+        [TestCase(-123, ExpectedResult = -321)]
+        public int ReverseInteger(int x)
+        {
+            var solver = new ReverseInteger();
+            return solver.Solution(x);
+        }
     }
 }
