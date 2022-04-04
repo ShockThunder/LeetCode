@@ -48,5 +48,13 @@ namespace Tests
 
             Assert.AreEqual(expectedResult, result);
         }
+
+        [Test]
+        [TestCase(121, ExpectedResult =true)]
+        public bool PalindromeNumber(int x)
+        {
+            var solver = new PalindromeNumber();
+            return solver.Solution(x);
+        }
     }
 }

@@ -86,5 +86,13 @@ namespace Tests
             var solver = new ReverseInteger();
             return solver.Solution(x);
         }
+
+        [Test]
+        [TestCase(new int[] { 1, 8, 6, 2, 5, 4, 8, 3, 7 }, ExpectedResult = 49)]
+        public int ContainerWithMostWater(int[] height)
+        {
+            var solver = new ContainerWithMostWater();
+            return solver.Solution(height);
+        }
     }
 }
