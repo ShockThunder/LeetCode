@@ -1,26 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LeetCode
 {
     public class ContainerWithMostWater
     {
+        //Two pointers
         public int Solution(int[] height)
         {
             var result = 0;
 
-            for(var i = 0; i < height.Length; i++)
+            var leftIndex = 0;
+            var rightIndex = height.Length - 1;
+
+            while(leftIndex < rightIndex)
             {
-                for(var j = i + 1; j < height.Length; j++)
-                {
-                    var lowPoint = height[i] < height[j] ? height[i] : height[j];
-                    var area = lowPoint * (j - i);
-                    if(area > result)
-                        result = area;
-                }
+                var area = Math.Min(height[leftIndex], height[rightIndex]) * (rightIndex - leftIndex);
+                result = Math.Max(result, area);
+
+                if (height[leftIndex] < height[rightIndex])
+                    leftIndex++;
+                else
+                    rightIndex--;
             }
 
             return result;

@@ -94,5 +94,14 @@ namespace Tests
             var solver = new ContainerWithMostWater();
             return solver.Solution(height);
         }
+
+        [Test]
+        [TestCase(58, ExpectedResult ="LVIII")]
+        [TestCase(1994, ExpectedResult = "MCMXCIV")]
+        public string IntegerToRoman(int num)
+        {
+            var solver = new IntegerToRoman();
+            return solver.Solution(num);
+        }
     }
 }
